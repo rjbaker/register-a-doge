@@ -33,6 +33,8 @@ post '/register' do
 
   registration.save!
 
+  logger.info '{"first_name": "'+registration.first_name+'", "last_name": "'+registration.last_name+'", "code": "'+registration.code+'", "registration": "'+registration.registration+'"}'
+
   erb :success, locals: { registration: registration }
 end
 
