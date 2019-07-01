@@ -9,6 +9,7 @@ def setup_db_connection
     database: ENV.fetch('DB_NAME', 'postgres'),
     username: ENV.fetch('DB_USERNAME', 'postgres'),
     password: ENV.fetch('DB_PASSWORD', 'postgres'),
+    pool: ENV.fetch('DB_POOL', 25),
   )
   ActiveRecord::Schema.define(version: 0) do
     enable_extension 'pgcrypto' unless extension_enabled?('pgcrypto')
